@@ -183,7 +183,7 @@ if dri_drivers.contains('auto')
   if system_has_kms_drm
     # TODO: PPC, Sparc
     if ['x86', 'x86_64'].contains(host_machine.cpu_family())
-      dri_drivers = ['i915', 'i965', 'r100', 'r200', 'nouveau']
+      dri_drivers = ['i915', 'i965', 'r100', 'r200', 'nouveau', 'sis']
     elif ['arm', 'aarch64'].contains(host_machine.cpu_family())
       dri_drivers = []
     elif ['mips', 'mips64', 'riscv32', 'riscv64'].contains(host_machine.cpu_family())
@@ -205,6 +205,7 @@ with_dri_i915 = dri_drivers.contains('i915')
 with_dri_i965 = dri_drivers.contains('i965')
 with_dri_r100 = dri_drivers.contains('r100')
 with_dri_r200 = dri_drivers.contains('r200')
+with_dri_sis = dri_drivers.contains('sis')
 with_dri_nouveau = dri_drivers.contains('nouveau')
 
 with_dri = dri_drivers.length() != 0

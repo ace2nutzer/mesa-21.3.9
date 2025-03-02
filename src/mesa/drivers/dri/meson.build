@@ -43,6 +43,11 @@ if with_dri_r200
   _dri_drivers += libr200
   _dri_link += 'r200_dri.so'
 endif
+if with_dri_sis
+  subdir('sis')
+  _dri_drivers += libsis
+  _dri_link += 'sis_dri.so'
+endif
 if with_dri_nouveau
   subdir('nouveau')
   _dri_drivers += libnouveau_vieux
